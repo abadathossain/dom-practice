@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="body">
+    <section id="container" class="largej-text">
+        <h1 id="heading" class="atb" onclick="heading()">Lorem ipsum dolor sit amet.</h1><br>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro ab sequi facere, vel illum eligendi incidunt
+            dolores neque odio cupiditate.</p>
+        <button id="btn" onclick="randomColor()">Click Me</button>
+
+        <ul onclick="randomColor()" id="item-list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </section>
+
+
+    <script>
+        /* 
+        function heading(){
+            document.getElementById('heading').style.color = 'purple'
+        } */
+        // const title= document.getElementById('item-list').style
+        // console.log( title.classList)
+
+        //    const li = document.createElement('li')
+        //    li.innerText = 'brand'
+        //    itemLFist.appendChild('li')
+        //    itemLFist.parentNode
+        function handled() {
+            document.getElementById('btn').style.backgroundColor = 'red'
+
+        }
+        function randomColor() {
+            let color = [];
+            for (let i = 0; i < 3; i++) {
+                color.push(Math.floor(Math.random() * 256));
+            }
+            return 'rgb(' + color.join(', ') + ')';
+        }
+
+        /* document.addEventListener("mouseover", function(){
+          document.body.style.backgroundColor = randomColor();
+        }); */
+
+        document.getElementById('btn').addEventListener('mouseover', event => {
+            event.target.style.fill = randomColor();
+        });
+
+    </script>
+</body>
+
+</html>
